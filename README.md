@@ -21,13 +21,13 @@ To visualize robot in Rviz with MoveIt, launch the following:
 ```sh
 $ roslaunch ur5_robotiq_85_moveit_config demo.launch
 ```
-[MoveIt visualization](images/moveit_visualization.png)
+![MoveIt visualization](images/moveit_visualization.png)
 
 ## Gazebo visualization
 ```sh
 $ roslaunch ur5_robotiq_85_moveit_config demo_gazebo.launch
 ```
-[Gazebo visualization](images/gazebo_visualization.png)
+![Gazebo visualization](images/gazebo_visualization.png)
 
 ## Pick-and-Place MoveIt
 First, run this:
@@ -38,7 +38,7 @@ After everything goes up, in another terminal run:
 ```sh
 $ roslaunch ur5_robotiq_85_manipulation pickandplace.launch
 ```
-[MoveIt Pick-and-Place](images/moveit_pickandplace.png)
+![MoveIt Pick-and-Place](images/moveit_pickandplace.png)
 
 ## Pick-and-Place MoveIt with Gazebo [still in works]
 First, run this:
@@ -49,4 +49,4 @@ After everything goes up, in another terminal run:
 ```sh
 $ roslaunch ur5_robotiq_85_manipulation pickandplace.launch
 ```
-[Gazebo Pick-and-Place](images/gazebo_pickandplace.png)
+![Gazebo Pick-and-Place](images/gazebo_pickandplace.png)
