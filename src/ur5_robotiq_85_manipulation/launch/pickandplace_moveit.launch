@@ -1,0 +1,4 @@
+<launch>
+    <!-- Run MoveIt for pick and place -->
+    <include file="$(find ur5_robotiq_85_moveit_config)/launch/demo.launch"/>
+</launch>

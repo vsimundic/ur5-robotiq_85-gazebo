@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="paused" default="false"/>
+  <arg name="gazebo_gui" default="true"/>
+  <arg name="urdf_path" default="$(find ur5_description)/urdf/ur5_robotiq85_gripper.urdf.xacro"/>
+  <arg name="world_name" default = "worlds/empty.world" />
+  <arg name="x" default="0.0"/>
+  <arg name="y" default="0.0"/>
+  <arg name="z" default="0.0"/>
+
+  <!-- startup simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" default="$(arg world_name)"/>
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="gui" value="$(arg gazebo_gui)"/>
+  </include>
+
+  <!-- send robot urdf to param server -->
+  <param name="robot_description" command="$(find xacro)/xacro '$(find ur5_description)/urdf/ur5_robotiq85_gripper.urdf.xacro'" />
+
+  <!-- push robot_description to factory and spawn robot in gazebo at the origin, change x,y,z arguments to spawn in a different position -->
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model"
+      args="-urdf -param robot_description -model ur5 -x $(arg x) -y $(arg y) -z $(arg z)
+            -J shoulder_lift_joint -1.5707
+            -J wrist_2_joint 1.5707"
+      output="screen" />
+
+  <include file="$(find ur5_robotiq_85_moveit_config)/launch/ros_controllers.launch"/>
+
+</launch>

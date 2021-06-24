@@ -1,0 +1,9 @@
+<launch>
+    <!-- Run gazebo with custom params -->
+    <include file="$(find ur5_robotiq_85_moveit_config)/launch/gazebo.launch" >
+        <arg name="world_name" value="$(find ur5_robotiq_85_manipulation)/worlds/basic_pickplace.world"/>
+        <arg name="x" value="0.0"/>
+        <arg name="y" value="0.0"/>
+        <arg name="z" value="1.0"/>
+    </include>
+</launch>

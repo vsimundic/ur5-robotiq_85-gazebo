@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- gazebo.xacro -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="robotiq_85_gripper_gazebo" params="prefix">
+        <xacro:macro name="hand_gazebo" params="link">
+            <gazebo reference="${link}">
+                <material>Gazebo/Black</material>
+                <!-- <mu1>0.2</mu1> -->
+                <!-- <mu2>0.2</mu2> -->
+            </gazebo>
+        </xacro:macro>
+        <xacro:hand_gazebo link="${prefix}robotiq_85_base_link"/>
+        <xacro:hand_gazebo link="${prefix}robotiq_85_left_knuckle_link"/>
+        <xacro:hand_gazebo link="${prefix}robotiq_85_right_knuckle_link"/>
+        <xacro:hand_gazebo link="${prefix}robotiq_85_left_finger_link"/>
+        <xacro:hand_gazebo link="${prefix}robotiq_85_right_finger_link"/>
+        <xacro:hand_gazebo link="${prefix}robotiq_85_left_inner_knuckle_link"/>
+        <xacro:hand_gazebo link="${prefix}robotiq_85_right_inner_knuckle_link"/>
+        <xacro:hand_gazebo link="${prefix}robotiq_85_left_finger_tip_link"/>
+        <xacro:hand_gazebo link="${prefix}robotiq_85_right_finger_tip_link"/>
+    </xacro:macro>
+</robot>

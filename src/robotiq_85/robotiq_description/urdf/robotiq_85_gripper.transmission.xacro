@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="robotiq_85_gripper_transmission" params="prefix">
+
+        <transmission name="${prefix}robotiq_85_left_knuckle_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}robotiq_85_left_knuckle_joint">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}robotiq_85_left_knuckle_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </actuator>
+        </transmission>
+
+        <!-- Mimic joints -->
+        <gazebo>
+            <plugin filename="libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so" name="${prefix}mimic_robotiq_85_1">
+                <joint>${prefix}robotiq_85_left_knuckle_joint</joint>
+                <mimicJoint>${prefix}robotiq_85_right_knuckle_joint</mimicJoint>
+            </plugin>
+            <plugin filename="libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so" name="${prefix}mimic_robotiq_85_2">
+                <joint>${prefix}robotiq_85_left_knuckle_joint</joint>
+                <mimicJoint>${prefix}robotiq_85_left_inner_knuckle_joint</mimicJoint>
+            </plugin>
+            <plugin filename="libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so" name="${prefix}mimic_robotiq_85_3">
+                <joint>${prefix}robotiq_85_left_knuckle_joint</joint>
+                <mimicJoint>${prefix}robotiq_85_right_inner_knuckle_joint</mimicJoint>
+            </plugin>
+            <plugin filename="libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so" name="${prefix}mimic_robotiq_85_4">
+                <joint>${prefix}robotiq_85_left_knuckle_joint</joint>
+                <mimicJoint>${prefix}robotiq_85_left_finger_tip_joint</mimicJoint>
+                <multiplier>-1.0</multiplier>
+                <!-- <offset>0.0</offset> -->
+            </plugin>
+            <plugin filename="libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so" name="${prefix}mimic_robotiq_85_5">
+                <joint>${prefix}robotiq_85_left_knuckle_joint</joint>
+                <mimicJoint>${prefix}robotiq_85_right_finger_tip_joint</mimicJoint>
+                <multiplier>-1.0</multiplier>
+                <!-- <offset>0.0</offset> -->
+            </plugin>
+
+            <!-- <plugin name="gazebo_grasp_fix" filename="libgazebo_grasp_fix.so">
+                <arm>
+                    <arm_name>robotiq_85_gripper</arm_name>
+                    <palm_link>${prefix}robotiq_85_base_link</palm_link> 
+                    <gripper_link> ${prefix}robotiq_85_left_knuckle_link </gripper_link>
+                    <gripper_link> ${prefix}robotiq_85_right_knuckle_link </gripper_link>
+                </arm>
+                <forces_angle_tolerance>100</forces_angle_tolerance>
+                <update_rate>10</update_rate>
+                <grip_count_threshold>3</grip_count_threshold>
+                <max_grip_count>10</max_grip_count>
+                <release_tolerance>0.001</release_tolerance>
+                <disable_collisions_on_attach>false</disable_collisions_on_attach>
+                <contact_topic>__default_topic__</contact_topic>
+            </plugin> -->
+
+        </gazebo>
+
+
+
+    </xacro:macro>
+
+</robot>
