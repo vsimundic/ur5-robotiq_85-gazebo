@@ -20,9 +20,7 @@
 
   <!-- push robot_description to factory and spawn robot in gazebo at the origin, change x,y,z arguments to spawn in a different position -->
   <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model"
-      args="-urdf -param robot_description -model ur5 -x $(arg x) -y $(arg y) -z $(arg z)
-            -J shoulder_lift_joint -1.5707
-            -J wrist_2_joint 1.5707"
+      args="-urdf -param robot_description -model ur5 -x $(arg x) -y $(arg y) -z $(arg z)"
       output="screen" />
 
   <include file="$(find ur5_robotiq_85_moveit_config)/launch/ros_controllers.launch"/>

@@ -17,7 +17,7 @@
   <!-- Custom spawn coordinates -->
   <arg name="x" default="0.0"/>
   <arg name="y" default="0.0"/>
-  <arg name="z" default="0.0"/>
+  <arg name="z" default="0.5"/> <!-- Robot needs to float because of the initial position -->
 
   <!--
   By default, hide joint_state_publisher's GUI
@@ -40,6 +40,10 @@
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
     <!-- <arg name="urdf_path" value="$(arg urdf_path)"/> -->
+    <arg name="x" value="0.0"/>
+    <arg name="y" value="0.0"/>
+    <arg name="z" value="0.35"/> <!-- Robot needs to float because of the initial position -->
+
   </include>
 
   <!-- If needed, broadcast static tf for robot root -->
