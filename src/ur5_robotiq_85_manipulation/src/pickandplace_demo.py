@@ -98,7 +98,7 @@ class PickAndPlace:
         grasp_.grasp_pose.pose.orientation = Quaternion(*q_)
         grasp_.grasp_pose.pose.position.x = 0.0
         grasp_.grasp_pose.pose.position.y = 0.65
-        grasp_.grasp_pose.pose.position.z = 0.25
+        grasp_.grasp_pose.pose.position.z = 0.1
 
         # Pre-grasp approach
         grasp_.pre_grasp_approach.direction.header.frame_id = self._frame_id
@@ -109,7 +109,7 @@ class PickAndPlace:
         # Post-grasp retreat
         grasp_.post_grasp_retreat.direction.header.frame_id = self._frame_id
         grasp_.post_grasp_retreat.direction.vector.z = 1.0
-        grasp_.post_grasp_retreat.min_distance = 0.1
+        grasp_.post_grasp_retreat.min_distance = 0.2
         grasp_.post_grasp_retreat.desired_distance = 0.4
 
         # Set the posture of end-effector before grasp
@@ -148,8 +148,8 @@ class PickAndPlace:
         # Pre-place approach
         point_.pre_place_approach.direction.header.frame_id = self._frame_id
         point_.pre_place_approach.direction.vector.z = -1.0
-        point_.pre_place_approach.min_distance = 0.2
-        point_.pre_place_approach.desired_distance = 0.4
+        point_.pre_place_approach.min_distance = 0.1
+        point_.pre_place_approach.desired_distance = 0.2
 
         # Post-grasp retreat
         point_.post_place_retreat.direction.header.frame_id = self._frame_id
