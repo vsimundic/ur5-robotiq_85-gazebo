@@ -1,9 +1,9 @@
 <launch>
     <!-- Spawn tables and a coke can -->
-    <node name="spawn_models" pkg="ur5_robotiq_85_manipulation" type="spawn_moveit_models.py"/>
+    <node name="spawn_models" pkg="ur5_robotiq_85_manipulation" type="spawn_moveit_models.py" output="screen"/>
 
     <!-- Perform pick and place on a can -->
-    <node name="pick_and_place" pkg="ur5_robotiq_85_manipulation" type="pickandplace_demo.py">
+    <node name="pick_and_place" pkg="ur5_robotiq_85_manipulation" type="pickandplace_demo.py" output="screen">
         <param name="group_arm" value="arm"/>
         <param name="group_gripper" value="hand"/>
         <param name="timeout" value="5.0"/>

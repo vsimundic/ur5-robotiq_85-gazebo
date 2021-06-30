@@ -476,32 +476,32 @@
       <pose frame=''>0 1 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>2402 767000000</sim_time>
-      <real_time>96 112713722</real_time>
-      <wall_time>1624562681 628015547</wall_time>
-      <iterations>95980</iterations>
+      <sim_time>2450 627000000</sim_time>
+      <real_time>47 897775856</real_time>
+      <wall_time>1625072765 504721265</wall_time>
+      <iterations>47860</iterations>
       <model name='coke_can'>
-        <pose frame=''>2.7e-05 0.650091 1.01169 0.03462 -0.009088 0.000414</pose>
+        <pose frame=''>2e-06 0.800051 1.01184 0.020913 -0.000585 0.000513</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>2.7e-05 0.650091 1.01169 0.03462 -0.009088 0.000414</pose>
+          <pose frame=''>2e-06 0.800051 1.01184 0.020913 -0.000585 0.000513</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-7e-06 1.5e-05 -1e-06 -0.000269 -0.000115 2e-06</acceleration>
-          <wrench>-3e-06 6e-06 -0 0 -0 0</wrench>
+          <acceleration>-2.8e-05 -0.000204 -2e-05 0.003585 -0.000523 0.000189</acceleration>
+          <wrench>-1.1e-05 -8e-05 -8e-06 0 -0 0</wrench>
         </link>
       </model>
       <model name='fidget_spinner'>
-        <pose frame=''>0.278038 0.534399 -2.52039e+07 0 -0 0</pose>
+        <pose frame=''>0.278038 0.534399 -2.62789e+07 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='rotor'>
-          <pose frame=''>0.278038 0.534399 -2.52039e+07 0 -0 0</pose>
-          <velocity>0 -0 -22226 0 -0 0</velocity>
+          <pose frame=''>0.278038 0.534399 -2.62789e+07 0 -0 0</pose>
+          <velocity>0 -0 -22695 0 -0 0</velocity>
           <acceleration>-0 -0 -9.8 0 -0 0</acceleration>
           <wrench>-0 -0 -1.71975 0 -0 0</wrench>
         </link>
         <link name='stator'>
-          <pose frame=''>0.278038 0.534399 -2.52039e+07 0 -0 0</pose>
-          <velocity>0 -0 -22226 0 -0 0</velocity>
+          <pose frame=''>0.278038 0.534399 -2.62789e+07 0 -0 0</pose>
+          <velocity>0 -0 -22695 0 -0 0</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -0.730243 0 -0 0</wrench>
         </link>

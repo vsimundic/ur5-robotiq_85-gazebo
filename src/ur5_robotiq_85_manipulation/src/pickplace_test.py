@@ -102,16 +102,40 @@ def _place():
 
 #Initialize ROS node and moveit objects
 rospy.init_node("panda_pick_and_place")
-# robot = moveit_commander.RobotCommander()
-# scene = moveit_commander.PlanningSceneInterface()
-# group_name = _arm_group_name
-# move_group = moveit_commander.MoveGroupCommander(group_name)
-# rospy.sleep(2)
+robot = moveit_commander.RobotCommander()
+scene = moveit_commander.PlanningSceneInterface()
+group_name = _arm_group_name
+move_group = moveit_commander.MoveGroupCommander(group_name)
+rospy.sleep(2)
 
 # # Pick object
 # _pick(move_group)
 # rospy.sleep(1)
 
-q_ = quaternion_from_euler(-pi / 2, -pi / 4, -pi / 2)
-eu = euler_from_quaternion([0.0, 0.70719, -0.707002, 0.0])
-print(eu)
+# q_ = quaternion_from_euler(-pi / 2, -pi / 4, -pi / 2)
+# eu = euler_from_quaternion([0.0, 0.70719, -0.707002, 0.0])
+# print(eu)
+
+def get_rekt():
+    start = rospy.get_time()
+    seconds = rospy.get_time()
+    timeout = 2.0 # in seconds
+
+    # Loop until the objects placed are on the scene or the time runs out
+    while (seconds - start < timeout) and not rospy.is_shutdown():
+        # Test if models are on scene
+        is_known_table1 = 'table1' in scene.get_known_object_names()
+        is_known_table2 = 'table2' in scene.get_known_object_names()
+        is_known_coke_can = 'coke_can' in scene.get_known_object_names()
+
+        if is_known_table1 and is_known_table2 and is_known_coke_can:
+            return True
+
+        # Sleep so that we give other threads time on the processor
+        rospy.sleep(0.1)
+        seconds = rospy.get_time()
+
+    # If all objects don't appear until the timeout
+    return False
+
+print(get_rekt())

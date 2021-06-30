@@ -23,10 +23,9 @@ class PickAndPlace:
         self._frame_id = "base_link"
 
         self._move_group = moveit_commander.MoveGroupCommander(self._arm_group_name)
-        self._move_group.set_planning_time(15)
+        self._move_group.set_planning_time(5)
 
         self._grasps = []
-
 
 
     def are_models_on_scene(self):
@@ -81,7 +80,7 @@ class PickAndPlace:
 
         # Set the gripper closed
         point_ = JointTrajectoryPoint()
-        point_.positions.append(0.2)
+        point_.positions.append(0.4)
         posture.points.append(point_)
     
 
@@ -97,9 +96,9 @@ class PickAndPlace:
         
         q_ = quaternion_from_euler(-pi / 2, 0.0, 0.0)
         grasp_.grasp_pose.pose.orientation = Quaternion(*q_)
-        grasp_.grasp_pose.pose.position.x = 0.0002
+        grasp_.grasp_pose.pose.position.x = 0.0
         grasp_.grasp_pose.pose.position.y = 0.65
-        grasp_.grasp_pose.pose.position.z = 0.06
+        grasp_.grasp_pose.pose.position.z = 0.25
 
         # Pre-grasp approach
         grasp_.pre_grasp_approach.direction.header.frame_id = self._frame_id
@@ -120,10 +119,10 @@ class PickAndPlace:
         self._close_gripper(grasp_.grasp_posture)
 
         # Table 1 is the supporting surface for the grasp object
-        self._move_group.set_support_surface_name("table1")
+        self._move_group.set_support_surface_name('table1')
 
         # Pick up the object with grasps
-        self._move_group.pick("coke_can", self._grasps)
+        self._move_group.pick('coke_can', self._grasps)
 
 
     def _place(self):
@@ -177,10 +176,6 @@ class PickAndPlace:
         rospy.sleep(2)
         self._place()
 
-        rospy.sleep(2)
-        self._move_group.set_named_target("home")
-        self._move_group.go(wait=True)
-
 
 def main():
 
@@ -201,6 +196,10 @@ def main():
 
     # Perform pick and place
     pick_place_holder.performPickPlace()
+
+    rospy.sleep(2)
+    # self._move_group.set_named_target("home")
+    # self._move_group.go(wait=True)
 
 
 if __name__ == '__main__':
