@@ -40,9 +40,10 @@
     <arg name="paused" value="$(arg paused)"/>
     <arg name="gazebo_gui" value="$(arg gazebo_gui)"/>
     <!-- <arg name="urdf_path" value="$(arg urdf_path)"/> -->
-    <arg name="x" value="0.0"/>
-    <arg name="y" value="0.0"/>
-    <arg name="z" value="0.35"/> <!-- Robot needs to float because of the initial position -->
+    <arg name="x" value="$(arg x)"/>
+    <arg name="y" value="$(arg y)"/>
+    <arg name="z" value="$(arg z)"/> <!-- Robot needs to float because of the initial position -->
+    <arg name="world_name" value="$(arg world_name)"/>
 
   </include>
 

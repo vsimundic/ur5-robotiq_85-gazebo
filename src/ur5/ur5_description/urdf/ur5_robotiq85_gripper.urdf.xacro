@@ -37,7 +37,7 @@
   <gazebo reference="robotiq_coupler">
     <mu1>0.9</mu1>
     <mu2>0.9</mu2>
-    <material>Gazebo/FlatBlack</material>
+    <material>Gazebo/Grey</material>
   </gazebo>
 
   <!-- Attach the robotiq 85 gripper -->
@@ -45,8 +45,8 @@
     <origin xyz="0 0 0.004" rpy="0 ${-pi/2} ${pi}"/>
   </xacro:robotiq_85_gripper>
 
-  <xacro:robotiq_85_gripper_transmission prefix="" />
-  <xacro:ur_arm_transmission prefix="" />
+  <!-- <xacro:robotiq_85_gripper_transmission prefix="" /> -->
+  <!-- <xacro:ur_arm_transmission prefix="" /> -->
 
   <!-- Gazebo FT sensor plugin -->
   <gazebo reference="wrist_3_joint">
@@ -65,8 +65,8 @@
   <gazebo>
     <gripper name="gazebo_gripper">
       <grasp_check>
-        <attach_steps>2</attach_steps>    <!-- default: 20 -->
-        <detach_steps>2</detach_steps>    <!-- default: 40 -->
+        <attach_steps>20</attach_steps>    <!-- default: 20 -->
+        <detach_steps>40</detach_steps>    <!-- default: 40 -->
         <min_contact_count>3</min_contact_count>
       </grasp_check>
       <gripper_link>robotiq_85_left_finger_tip_link</gripper_link>

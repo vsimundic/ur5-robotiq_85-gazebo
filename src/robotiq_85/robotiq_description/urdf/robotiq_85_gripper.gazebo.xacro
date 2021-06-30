@@ -5,7 +5,7 @@
     <xacro:macro name="robotiq_85_gripper_gazebo" params="prefix">
         <xacro:macro name="hand_gazebo" params="link">
             <gazebo reference="${link}">
-                <material>Gazebo/Black</material>
+                <material>Gazebo/DarkGrey</material>
                 <!-- <mu1>0.2</mu1> -->
                 <!-- <mu2>0.2</mu2> -->
             </gazebo>
