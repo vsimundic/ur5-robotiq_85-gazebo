@@ -17,6 +17,7 @@ class ModelSpawn:
         self.table2_name_ = "table2"
         self.coke_can_name_ = "coke_can"
         
+        
     def _spawn_models(self):
         retval = self._add_objects_on_scene()
         assert retval, "[AssertionError]: Timeout ran out. Objects not placed on scene."
@@ -38,7 +39,7 @@ class ModelSpawn:
         self._add_table(self.table1_name_, 0.0, 1.0, -(1.03)/2, quaternion_from_euler(0.0, 0.0, 0.0))
         self._add_table(self.table2_name_, 0.0, -1.0, -(1.03)/2, quaternion_from_euler(0.0, 0.0, 0.0))
         
-        self._add_coke_can(self.coke_can_name_, 0.0, 0.8, 0.122/2.0, quaternion_from_euler(0.0, 0.0, 0.0))
+        self._add_coke_can(self.coke_can_name_, 0.0, 0.75, 0.122/2.0, quaternion_from_euler(0.0, 0.0, 0.0))
 
 
         start = rospy.get_time()
@@ -108,7 +109,7 @@ class ModelSpawn:
         p_.pose.position.z = z
         p_.pose.orientation = Quaternion(*q)
 
-        # Coke can size is used from ur5_robotiq_85_manipulation/models/coke_can/model.sdf (googled it)
+        # Coke can size is used from ur5_robotiq_85_manipulation/models/coke_can/model.sdf (actually googled it)
         # diameter is 65 mm
         self._scene.add_cylinder(name, p_, height=0.122, radius=0.0325)
 

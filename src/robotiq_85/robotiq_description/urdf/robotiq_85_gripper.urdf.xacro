@@ -260,17 +260,19 @@
 
     <!-- Improve grasping physics -->
     <gazebo reference="${prefix}robotiq_85_left_finger_tip_link">
-      <kp>1000000.0</kp>
-      <kd>1.0</kd>
-      <mu1>1.0</mu1>
-      <mu2>1.0</mu2>
+      <kp>10000000.0</kp>
+      <kd>1000.0</kd>
+      <mu1>10000.0</mu1>
+      <mu2>10000.0</mu2>
+      <maxVel>1.0</maxVel>
       <minDepth>0.001</minDepth>
     </gazebo>
     <gazebo reference="${prefix}robotiq_85_right_finger_tip_link">
-      <kp>1000000.0</kp>
-      <kd>1.0</kd>
-      <mu1>1.0</mu1>
-      <mu2>1.0</mu2>
+      <kp>10000000.0</kp>
+      <kd>1000.0</kd>
+      <mu1>10000.0</mu1>
+      <mu2>10000.0</mu2>
+      <maxVel>1.0</maxVel>
       <minDepth>0.001</minDepth>
     </gazebo>
 

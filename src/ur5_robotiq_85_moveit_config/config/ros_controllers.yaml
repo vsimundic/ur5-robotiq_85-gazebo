@@ -31,15 +31,15 @@ gripper_controller:
   constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.05
-      robotiq_85_left_knuckle_joint: {trajectory: 0.1, goal: 0.1}
+      robotiq_85_left_knuckle_joint: {trajectory: 0.5, goal: 0.5}
   stop_trajectory_duration: 0.5
   state_publish_rate:  25
   action_monitor_rate: 10
   gains:
-    robotiq_85_left_knuckle_joint: {p: 10.0, i: 0.0, d: 0.01}
-    robotiq_85_right_knuckle_joint: {p: 10.0, i: 0.0, d: 0.01}
-    robotiq_85_left_inner_knuckle_joint: {p: 10.0, i: 0.0, d: 0.01}
-    robotiq_85_right_inner_knuckle_joint: {p: 10.0, i: 0.0, d: 0.01}
+    robotiq_85_left_knuckle_joint: {p: 50.0, i: 0.001, d: 0.01}
+    robotiq_85_right_knuckle_joint: {p: 50.0, i: 0.001, d: 0.01}
+    robotiq_85_left_inner_knuckle_joint: {p: 30.0, i: 0.01, d: 0.01}
+    robotiq_85_right_inner_knuckle_joint: {p: 30.0, i: 0.01, d: 0.01}
     robotiq_85_left_finger_tip_joint: {p: 0.5, i: 0.0, d: 0.001}
     robotiq_85_right_finger_tip_joint: {p: 0.5, i: 0.0, d: 0.001}
 
@@ -91,8 +91,8 @@ gazebo_ros_control:
   pid_gains:
     robotiq_85_left_knuckle_joint: {p: 10.0, i: 0.0, d: 0.01}
     robotiq_85_right_knuckle_joint: {p: 10.0, i: 0.0, d: 0.01}
-    robotiq_85_left_inner_knuckle_joint: {p: 10.0, i: 0.0, d: 0.01}
-    robotiq_85_right_inner_knuckle_joint: {p: 10.0, i: 0.0, d: 0.01}
+    robotiq_85_left_inner_knuckle_joint: {p: 10.0, i: 0.01, d: 0.01}
+    robotiq_85_right_inner_knuckle_joint: {p: 10.0, i: 0.01, d: 0.01}
     robotiq_85_left_finger_tip_joint: {p: 0.5, i: 0.0, d: 0.001}
     robotiq_85_right_finger_tip_joint: {p: 0.5, i: 0.0, d: 0.001}
 

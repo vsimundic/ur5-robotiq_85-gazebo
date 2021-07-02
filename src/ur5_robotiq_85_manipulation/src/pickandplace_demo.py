@@ -25,6 +25,9 @@ class PickAndPlace:
         self._move_group = moveit_commander.MoveGroupCommander(self._arm_group_name)
         self._move_group.set_planning_time(5)
 
+        self._move_group.set_max_velocity_scaling_factor(0.7)
+        self._move_group.set_max_acceleration_scaling_factor(0.7)
+
         self._grasps = []
 
 
@@ -67,6 +70,7 @@ class PickAndPlace:
         # Set the gripper open
         point_ = JointTrajectoryPoint()
         point_.positions.append(0.01)
+        point_.time_from_start = rospy.Duration(0.5)
         posture.points.append(point_)
 
 
@@ -81,6 +85,7 @@ class PickAndPlace:
         # Set the gripper closed
         point_ = JointTrajectoryPoint()
         point_.positions.append(0.4)
+        point_.time_from_start = rospy.Duration(0.5)
         posture.points.append(point_)
     
 
@@ -97,8 +102,8 @@ class PickAndPlace:
         q_ = quaternion_from_euler(-pi / 2, 0.0, 0.0)
         grasp_.grasp_pose.pose.orientation = Quaternion(*q_)
         grasp_.grasp_pose.pose.position.x = 0.0
-        grasp_.grasp_pose.pose.position.y = 0.65
-        grasp_.grasp_pose.pose.position.z = 0.1
+        grasp_.grasp_pose.pose.position.y = 0.6
+        grasp_.grasp_pose.pose.position.z = 0.09
 
         # Pre-grasp approach
         grasp_.pre_grasp_approach.direction.header.frame_id = self._frame_id
@@ -176,6 +181,14 @@ class PickAndPlace:
         rospy.sleep(2)
         self._place()
 
+    def go_home(self):
+        """
+        Position the robot home.
+        """
+        rospy.sleep(2) # preventive sleep 
+        self._move_group.set_named_target("home")
+        self._move_group.go(wait=True)
+
 
 def main():
 
@@ -193,13 +206,15 @@ def main():
         rospy.signal_shutdown("No models on the scene. Shutting down.")
         return
 
+    # Go to home position before the pick-and-place pipeline
+    pick_place_holder.go_home()
 
     # Perform pick and place
     pick_place_holder.performPickPlace()
 
-    rospy.sleep(2)
-    # self._move_group.set_named_target("home")
-    # self._move_group.go(wait=True)
+    # Rest at home position 
+    pick_place_holder.go_home()
+
 
 
 if __name__ == '__main__':
