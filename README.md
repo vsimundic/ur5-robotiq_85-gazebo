@@ -109,4 +109,4 @@ $ roslaunch ur5_robotiq_85_manipulation pickandplace.launch
 ## Video showcasing the problem
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=J26rIRv6ypw
 " target="_blank"><img src="https://img.youtube.com/vi/J26rIRv6ypw/maxresdefault.jpg"
-alt="Video showcasing the problem" width="1280" height="720" border="0" /></a>
+alt="Video showcasing the problem" width="1280" height="500" border="0" /></a>
