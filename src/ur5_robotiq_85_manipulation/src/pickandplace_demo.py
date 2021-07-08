@@ -25,8 +25,8 @@ class PickAndPlace:
         self._move_group = moveit_commander.MoveGroupCommander(self._arm_group_name)
         self._move_group.set_planning_time(5)
 
-        self._move_group.set_max_velocity_scaling_factor(0.7)
-        self._move_group.set_max_acceleration_scaling_factor(0.7)
+        self._move_group.set_max_velocity_scaling_factor(0.3)
+        self._move_group.set_max_acceleration_scaling_factor(0.3)
 
         self._grasps = []
 
@@ -70,7 +70,7 @@ class PickAndPlace:
         # Set the gripper open
         point_ = JointTrajectoryPoint()
         point_.positions.append(0.01)
-        point_.time_from_start = rospy.Duration(0.5)
+        point_.time_from_start = rospy.Duration(1.05)
         posture.points.append(point_)
 
 
@@ -84,8 +84,8 @@ class PickAndPlace:
 
         # Set the gripper closed
         point_ = JointTrajectoryPoint()
-        point_.positions.append(0.4)
-        point_.time_from_start = rospy.Duration(0.5)
+        point_.positions.append(0.42)
+        point_.time_from_start = rospy.Duration(1.5)
         posture.points.append(point_)
     
 
@@ -99,11 +99,11 @@ class PickAndPlace:
 
         grasp_.grasp_pose.header.frame_id = self._frame_id
         
-        q_ = quaternion_from_euler(-pi / 2, 0.0, 0.0)
+        q_ = quaternion_from_euler(-pi/2, 0.0, 0.0)
         grasp_.grasp_pose.pose.orientation = Quaternion(*q_)
         grasp_.grasp_pose.pose.position.x = 0.0
-        grasp_.grasp_pose.pose.position.y = 0.6
-        grasp_.grasp_pose.pose.position.z = 0.09
+        grasp_.grasp_pose.pose.position.y = 0.616
+        grasp_.grasp_pose.pose.position.z = 0.083
 
         # Pre-grasp approach
         grasp_.pre_grasp_approach.direction.header.frame_id = self._frame_id
@@ -147,8 +147,8 @@ class PickAndPlace:
 
         # The pose is the exact location of the center of the object
         point_.place_pose.pose.position.x = 0
-        point_.place_pose.pose.position.y = -0.65
-        point_.place_pose.pose.position.z = 0.06
+        point_.place_pose.pose.position.y = -0.67
+        point_.place_pose.pose.position.z = 0.07
 
         # Pre-place approach
         point_.pre_place_approach.direction.header.frame_id = self._frame_id

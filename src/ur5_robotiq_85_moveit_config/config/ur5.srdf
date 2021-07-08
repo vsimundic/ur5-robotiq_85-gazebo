@@ -65,7 +65,7 @@
     <group_state name="closed" group="hand">
         <joint name="robotiq_85_left_finger_tip_joint" value="0" />
         <joint name="robotiq_85_left_inner_knuckle_joint" value="0" />
-        <joint name="robotiq_85_left_knuckle_joint" value="0.7" />
+        <joint name="robotiq_85_left_knuckle_joint" value="0.275" />
         <joint name="robotiq_85_right_finger_tip_joint" value="0" />
         <joint name="robotiq_85_right_inner_knuckle_joint" value="0" />
         <joint name="robotiq_85_right_knuckle_joint" value="0" />

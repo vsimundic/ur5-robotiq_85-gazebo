@@ -62,18 +62,18 @@
   </gazebo>
 
   <!-- Gazebo grasping plugin -->
-  <gazebo>
+  <!-- <gazebo>
     <gripper name="gazebo_gripper">
       <grasp_check>
-        <attach_steps>20</attach_steps>    <!-- default: 20 -->
-        <detach_steps>40</detach_steps>    <!-- default: 40 -->
+        <attach_steps>20</attach_steps>
+        <detach_steps>40</detach_steps>   
         <min_contact_count>3</min_contact_count>
       </grasp_check>
       <gripper_link>robotiq_85_left_finger_tip_link</gripper_link>
       <gripper_link>robotiq_85_right_finger_tip_link</gripper_link>
       <palm_link>robotiq_85_base_link</palm_link>
     </gripper>
-  </gazebo>
+  </gazebo> -->
 
   <!-- Load gazebo_ros_control -->
   <xacro:include filename="$(find ur5_description)/urdf/common.gazebo.xacro" />
