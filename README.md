@@ -7,6 +7,7 @@ The project is based on the following packages:
 - https://github.com/utecrobotics/ur5
 - https://github.com/utecrobotics/robotiq
 - https://github.com/roboticsgroup/roboticsgroup_upatras_gazebo_plugins
+- https://github.com/JenniferBuehler/gazebo-pkgs
 
 
 ## Installation process
@@ -40,7 +41,7 @@ $ roslaunch ur5_robotiq_85_manipulation pickandplace.launch
 ```
 ![MoveIt Pick-and-Place](images/moveit_pickandplace.png)
 
-## Pick-and-Place MoveIt with Gazebo [still in works]
+## Pick-and-Place MoveIt with Gazebo
 First, run this:
 ```sh
 $ roslaunch ur5_robotiq_85_manipulation pickandplace_gazebo.launch
@@ -50,3 +51,5 @@ After everything goes up, in another terminal run:
 $ roslaunch ur5_robotiq_85_manipulation pickandplace.launch
 ```
 ![Gazebo Pick-and-Place](images/gazebo_pickandplace.png)
+
+[![Video showcasing the problem](https://img.youtube.com/vi/J26rIRv6ypw/0.jpg)](https://www.youtube.com/watch?v=J26rIRv6ypw)
