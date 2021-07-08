@@ -84,8 +84,8 @@ class PickAndPlace:
 
         # Set the gripper closed
         point_ = JointTrajectoryPoint()
-        point_.positions.append(0.42)
-        point_.time_from_start = rospy.Duration(1.5)
+        point_.positions.append(0.425)
+        point_.time_from_start = rospy.Duration(1.0)
         posture.points.append(point_)
     
 
@@ -115,7 +115,7 @@ class PickAndPlace:
         grasp_.post_grasp_retreat.direction.header.frame_id = self._frame_id
         grasp_.post_grasp_retreat.direction.vector.z = 1.0
         grasp_.post_grasp_retreat.min_distance = 0.2
-        grasp_.post_grasp_retreat.desired_distance = 0.4
+        grasp_.post_grasp_retreat.desired_distance = 0.45
 
         # Set the posture of end-effector before grasp
         self._open_gripper(grasp_.pre_grasp_posture)

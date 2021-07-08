@@ -476,34 +476,18 @@
       <pose frame=''>0 1 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>2565 782000000</sim_time>
-      <real_time>78 491049065</real_time>
-      <wall_time>1625673023 397788621</wall_time>
-      <iterations>78401</iterations>
+      <sim_time>2709 412000000</sim_time>
+      <real_time>52 478274927</real_time>
+      <wall_time>1625761070 477972760</wall_time>
+      <iterations>52408</iterations>
       <model name='coke_can'>
-        <pose frame=''>0.439395 0.750172 1.01243 -0.010204 0.003208 -0.003023</pose>
+        <pose frame=''>-1e-06 0.749998 1.01243 -0.011193 0.004011 -0.005724</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>0.439395 0.750172 1.01243 -0.010204 0.003208 -0.003023</pose>
+          <pose frame=''>-1e-06 0.749998 1.01243 -0.011193 0.004011 -0.005724</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0.000153 1.9e-05 -1.6e-05 -0.000322 0.002683 0.000499</acceleration>
-          <wrench>6e-05 7e-06 -6e-06 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='fidget_spinner'>
-        <pose frame=''>0.278038 0.534399 -2.89574e+07 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='rotor'>
-          <pose frame=''>0.278038 0.534399 -2.89574e+07 0 -0 0</pose>
-          <velocity>0 -0 -23823.5 0 -0 0</velocity>
-          <acceleration>-0 -0 -9.8 0 -0 0</acceleration>
-          <wrench>-0 -0 -1.71975 0 -0 0</wrench>
-        </link>
-        <link name='stator'>
-          <pose frame=''>0.278038 0.534399 -2.89574e+07 0 -0 0</pose>
-          <velocity>0 -0 -23823.5 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -0.730243 0 -0 0</wrench>
+          <acceleration>-0 -0 0 3e-06 -0 -1e-06</acceleration>
+          <wrench>-0 -0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='ground_plane'>
@@ -514,16 +498,6 @@
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='plastic_cup'>
-        <pose frame=''>-9.4e-05 0.750065 1.02201 0.014707 -0.00983 0.00181</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-0.000731 0.749108 1.08699 0.014707 -0.00983 0.00181</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0.039604 0.022557 -0.001469 -0.312303 -0.548844 0.084939</acceleration>
-          <wrench>-0.002372 0.001351 -8.8e-05 0 -0 0</wrench>
         </link>
       </model>
       <model name='table'>
@@ -550,134 +524,9 @@
         <pose frame=''>0 0 10 0 -0 0</pose>
       </light>
     </state>
-    <model name='fidget_spinner'>
-      <link name='stator'>
-        <visual name='stator_visual'>
-          <geometry>
-            <mesh>
-              <uri>meshes/visual/stator.dae</uri>
-            </mesh>
-          </geometry>
-          <material>
-            <ambient>1 1 1 1</ambient>
-            <diffuse>1 1 1 1</diffuse>
-            <specular>1 1 1 1</specular>
-          </material>
-        </visual>
-        <collision name='stator_collision'>
-          <geometry>
-            <mesh>
-              <uri>meshes/collision/stator.stl</uri>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1.2</mu>
-                <mu2>1.2</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <inertial>
-          <pose frame=''>-0 -1.1e-05 -0 0 -0 0</pose>
-          <mass>0.0745146</mass>
-          <inertia>
-            <ixx>5.16289e-06</ixx>
-            <iyy>5.17028e-06</iyy>
-            <izz>7.80062e-06</izz>
-            <ixy>3.80471e-14</ixy>
-            <ixz>1.98212e-16</ixz>
-            <iyz>2.96908e-16</iyz>
-          </inertia>
-        </inertial>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <link name='rotor'>
-        <visual name='rotor_visual'>
-          <geometry>
-            <mesh>
-              <uri>meshes/visual/rotor.dae</uri>
-            </mesh>
-          </geometry>
-          <material>
-            <ambient>0 0 1 1</ambient>
-            <diffuse>0 0 1 1</diffuse>
-            <specular>0 0 1 1</specular>
-          </material>
-        </visual>
-        <collision name='rotor_collision'>
-          <geometry>
-            <mesh>
-              <uri>meshes/collision/rotor.stl</uri>
-            </mesh>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>1.2</mu>
-                <mu2>1.2</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <inertial>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <mass>0.175485</mass>
-          <inertia>
-            <ixx>7.36871e-05</ixx>
-            <iyy>7.36871e-05</iyy>
-            <izz>0.000145674</izz>
-            <ixy>-4.63077e-12</ixy>
-            <ixz>-1.70956e-23</ixz>
-            <iyz>-1.77795e-22</iyz>
-          </inertia>
-        </inertial>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <joint name='fidget_joint' type='revolute'>
-        <parent>stator</parent>
-        <child>rotor</child>
-        <axis>
-          <xyz>0 0 1</xyz>
-          <dynamics>
-            <damping>0.00025</damping>
-            <friction>1e-07</friction>
-            <spring_reference>0</spring_reference>
-            <spring_stiffness>0</spring_stiffness>
-          </dynamics>
-          <use_parent_model_frame>0</use_parent_model_frame>
-          <limit>
-            <lower>-1e+16</lower>
-            <upper>1e+16</upper>
-          </limit>
-        </axis>
-      </joint>
-      <pose frame=''>0.278038 0.534399 0 0 -0 0</pose>
-    </model>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>-2.73457 2.04792 2.66837 0 0.501305 -0.659422</pose>
+        <pose frame=''>4.64777 -0.002624 3.16237 0 0.437796 -3.1386</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -743,69 +592,6 @@
         <kinematic>0</kinematic>
       </link>
       <pose frame=''>0.073696 1.16694 0 0 -0 0</pose>
-    </model>
-    <model name='plastic_cup'>
-      <link name='link'>
-        <pose frame=''>0 0 0.065 0 -0 0</pose>
-        <inertial>
-          <mass>0.0599</mass>
-          <inertia>
-            <ixx>0.000302896</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.000302896</iyy>
-            <iyz>0</iyz>
-            <izz>3.28764e-05</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <uri>model://plastic_cup/meshes/plastic_cup.dae</uri>
-            </mesh>
-          </geometry>
-          <surface>
-            <contact>
-              <poissons_ratio>0.35</poissons_ratio>
-              <elastic_modulus>3.10264e+09</elastic_modulus>
-              <ode>
-                <kp>100000</kp>
-                <kd>100</kd>
-                <max_vel>100</max_vel>
-                <min_depth>0.001</min_depth>
-              </ode>
-            </contact>
-            <friction>
-              <torsional>
-                <coefficient>1</coefficient>
-                <use_patch_radius>0</use_patch_radius>
-                <surface_radius>0.01</surface_radius>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <uri>model://plastic_cup/meshes/plastic_cup.dae</uri>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/GreyTransparent</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-0.037456 -0.012709 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>
